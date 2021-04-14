@@ -1,26 +1,37 @@
 package com.example.dailymenu;
 
-public class Congthuc {
-    private String TenCT;
-    private int imgAnh;
-    public Congthuc(String tenCT, int imgAnh) {
-        TenCT = tenCT;
-        this.imgAnh = imgAnh;
+public class CongThuc {
+    private int Id;
+    private String tenMonan;
+    private byte[] anhMonAn;
+
+    public CongThuc(int id, String tenMonan, byte[] anhMonAn) {
+        Id = id;
+        this.tenMonan = tenMonan;
+        this.anhMonAn = anhMonAn;
     }
 
-    public String getTenCT() {
-        return TenCT;
+    public int getId() {
+        return Id;
     }
 
-    public void setTenCT(String tenCT) {
-        TenCT = tenCT;
+    public void setId(int id) {
+        Id = id;
     }
 
-    public int getImgAnh() {
-        return imgAnh;
+    public String getTenMonan() {
+        return tenMonan;
     }
 
-    public void setImgAnh(int imgAnh) {
-        this.imgAnh = imgAnh;
+    public void setTenMonan(String tenMonan) {
+        this.tenMonan = tenMonan;
+    }
+
+    public byte[] getAnhMonAn() {
+        return anhMonAn;
+    }
+
+    public void setAnhMonAn(byte[] anhMonAn) {
+        this.anhMonAn = anhMonAn;
     }
 }

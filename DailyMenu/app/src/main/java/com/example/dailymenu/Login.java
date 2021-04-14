@@ -1,6 +1,9 @@
 package com.example.dailymenu;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.app.Dialog;
 import android.content.Intent;
@@ -83,8 +86,9 @@ public class Login extends AppCompatActivity {
                     else if (user.getText().toString().equals("admin") && password.getText().toString().equals("admin"))
                     {
                         Intent intentuser= new Intent(Login.this,MainActivity.class);
-                        intentuser.putExtra("key1",user.getText().toString());
+                        intentuser.putExtra("keyuser",user.getText().toString());
                         startActivity(intentuser);
+
                     }
                     else {
                         Toast.makeText(Login.this,"Sai tên tài khoản hoặc Password.",Toast.LENGTH_SHORT).show();

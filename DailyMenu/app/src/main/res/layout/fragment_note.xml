@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nhập tên ghi chú ở đây ..."
+            android:padding="10dp"
+            android:id="@+id/editText_tenNote"></EditText>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nhập nội dung ghi chú ở đây ..."
+        android:padding="10dp"
+        android:id="@+id/editText_ndNote"></EditText>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+        android:text="ADD Note"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/button_addnote">
+        </Button>
+        <Button
+            android:layout_marginLeft="25dp"
+            android:text="Update"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:id="@+id/button_updatenote">
+        </Button>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/lv_note"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></ListView>
+</LinearLayout>
