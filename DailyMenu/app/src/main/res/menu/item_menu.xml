@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/favorite" android:iconTint="@color/color_itemfavorite" android:title="Yêu thích" android:icon="@drawable/ic_baseline_favorite_24" app:showAsAction="ifRoom"></item>
+    <item android:id="@+id/tangcochu" android:title="Tăng cỡ chữ"></item>
+    <item android:id="@+id/giamcochu" android:title="Giảm cỡ chữ"></item>
+    <item android:id="@+id/rate" android:title="Đánh giá ứng dựng"></item>
+</menu>

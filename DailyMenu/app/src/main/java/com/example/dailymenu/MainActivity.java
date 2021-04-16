@@ -6,9 +6,13 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -17,7 +21,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     TextView txtNameUser;
-    //
+    ImageView call,order;
     BottomNavigationView bottomNavigationView;
     ViewPager viewPager;
     @Override
@@ -27,20 +31,15 @@ public class MainActivity extends AppCompatActivity {
         //Lấy tên user sau khi đăng nhập
         txtNameUser= (TextView) findViewById(R.id.user_login);
         //Ánh xạ Bottom_nav_view,ViewPager
+        call=(ImageView) findViewById(R.id.call);
+        order=(ImageView) findViewById(R.id.order);
         bottomNavigationView= (BottomNavigationView) findViewById(R.id.bottom_nav_dailymenu);
         viewPager= (ViewPager) findViewById(R.id.ViewpageDailymenu);
         setUpViewPager();//Hàm xử lý ViewPager
-        //Thêm các công thức vào GridView
-//        congthucArrayList= new ArrayList<Congthuc>();
-//        congthucArrayList.add(new Congthuc("Món Xào",R.drawable.xao2));
-//        congthucArrayList.add(new Congthuc("Món Nộm", R.drawable.nom));
-//        congthucArrayList.add(new Congthuc("Làm Bánh",R.drawable.donut3));
-//        congthucArrayList.add(new Congthuc("Món Chiên",R.drawable.chien));
-//        congthucAdapter= new CongthucAdapter(this,R.layout.dong_congthuc,congthucArrayList);
-//        gvCongthuc.setAdapter(congthucAdapter);
         //Gán tên user vào txtNameUser
         Intent intentname= getIntent();
         String nameuser=intentname.getStringExtra("keyuser");
+        //Nhận dữ liệu từ
         txtNameUser.setText("Xin chào"+" "+nameuser);
         //Hàm xử lý khi click vào các item trong BottomNavigation
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -56,9 +55,28 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.action_note:
                         viewPager.setCurrentItem(2);
-                        break;
                 }
                 return true;
+            }
+        });
+        //Hàm thực hiện khi click vào image order đồ ăn
+        order.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            Intent intentorder = new Intent();
+            intentorder.setAction(Intent.ACTION_VIEW);
+            intentorder.setData(Uri.parse("https://www.foody.vn/"));
+            startActivity(intentorder);
+            }
+        });
+        //Hàm thực hiện khi click vào image Call
+        call.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentcall= new Intent();
+                intentcall.setAction(Intent.ACTION_CALL);
+                intentcall.setData(Uri.parse("tel:0373853447"));
+                startActivity(intentcall);
             }
         });
     }

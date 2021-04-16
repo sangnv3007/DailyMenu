@@ -29,7 +29,6 @@ import static com.example.dailymenu.NoteFragment.database;
 
 public class HomeFragment extends Fragment {
     GridView gridViewCongThuc;
-    SearchView searchView;
     List<CongThuc> congThucArrayList;
     CongThucAdapter congThucAdapter;
     public int idCT;
@@ -39,7 +38,6 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         //Ánh xạ
         gridViewCongThuc=(GridView) view.findViewById(R.id.GrvCongthuc);
-        searchView=(SearchView) view.findViewById(R.id.searchfood);
         congThucArrayList= new ArrayList<>();
         congThucAdapter = new CongThucAdapter(getActivity(),R.layout.dong_congthuc,congThucArrayList);
         gridViewCongThuc.setAdapter(congThucAdapter);
@@ -57,35 +55,35 @@ public class HomeFragment extends Fragment {
 //        byte[] monxao=byteArray.toByteArray();
 //        database.INSERT_CONGTHUC("Món Xào",monxao);
 //        Toast.makeText(getActivity(),"Thêm công thức xào thành công",Toast.LENGTH_SHORT).show();
-//            //Món Chiên
+////            //Món Chiên
 //        Bitmap MonChien=((BitmapDrawable) getResources().getDrawable(R.drawable.chien)).getBitmap();
 //        ByteArrayOutputStream byteArray1= new ByteArrayOutputStream();
 //        MonChien.compress(Bitmap.CompressFormat.PNG,100,byteArray1);
 //        byte[] monchien=byteArray1.toByteArray();
 //        database.INSERT_CONGTHUC("Món Chiên",monchien);
 //        Toast.makeText(getActivity(),"Thêm công thức thành công",Toast.LENGTH_SHORT).show();
-//            //Món Chay
+////            //Món Chay
 //        Bitmap MonChay=((BitmapDrawable) getResources().getDrawable(R.drawable.chay)).getBitmap();
 //        ByteArrayOutputStream byteArray2= new ByteArrayOutputStream();
 //        MonChay.compress(Bitmap.CompressFormat.PNG,100,byteArray2);
 //        byte[] monchay=byteArray2.toByteArray();
 //        database.INSERT_CONGTHUC("Món Chay",monchay);
 //        Toast.makeText(getActivity(),"Thêm công thức món chay thành công",Toast.LENGTH_SHORT).show();
-//            //Món Salad
+////            //Món Salad
 //        Bitmap MonSalad=((BitmapDrawable) getResources().getDrawable(R.drawable.salad)).getBitmap();
 //        ByteArrayOutputStream byteArray3= new ByteArrayOutputStream();
 //        MonSalad.compress(Bitmap.CompressFormat.PNG,100,byteArray3);
 //        byte[] monsalad=byteArray3.toByteArray();
 //        database.INSERT_CONGTHUC("Món Salad",monsalad);
 //        Toast.makeText(getActivity(),"Thêm công thức món salad thành công",Toast.LENGTH_SHORT).show();
-//            //Món Nhậu
+////            //Món Nhậu
 //        Bitmap MonNhau=((BitmapDrawable) getResources().getDrawable(R.drawable.nhau)).getBitmap();
 //        ByteArrayOutputStream byteArray4= new ByteArrayOutputStream();
 //        MonNhau.compress(Bitmap.CompressFormat.PNG,100,byteArray4);
 //        byte[] monnhau=byteArray4.toByteArray();
 //        database.INSERT_CONGTHUC("Món Nhậu",monnhau);
 //        Toast.makeText(getActivity(),"Thêm công thức món nhậu thành công",Toast.LENGTH_SHORT).show();
-//            //Món Hầm
+////            //Món Hầm
 //        Bitmap MonHam=((BitmapDrawable) getResources().getDrawable(R.drawable.ham)).getBitmap();
 //        ByteArrayOutputStream byteArray5= new ByteArrayOutputStream();
 //        MonHam.compress(Bitmap.CompressFormat.PNG,100,byteArray5);
@@ -113,7 +111,6 @@ public class HomeFragment extends Fragment {
             byte [] hinhanh=cursor.getBlob(2);
             congThucArrayList.add(new CongThuc(id,tenCongThuc,hinhanh));
         }
-
         congThucAdapter.notifyDataSetChanged();
     }
 }

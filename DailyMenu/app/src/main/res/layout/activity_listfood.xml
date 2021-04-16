@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".activity_listfood">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:weightSum="10"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edtSearch"
+            android:layout_weight="9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Tìm kiếm món ăn ở đây">
+        </EditText>
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tìm kiếm"
+            android:gravity="center"
+            android:id="@+id/btnsearch">
+        </Button>
+    </LinearLayout>
     <ListView
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/edtSearch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:id="@+id/listviewMonan"></ListView>
-</RelativeLayout>
+</LinearLayout>

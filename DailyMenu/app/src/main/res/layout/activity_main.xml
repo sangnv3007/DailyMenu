@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".MainActivity">
     <LinearLayout
         android:id="@+id/line1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:weightSum="10"
         android:orientation="horizontal">
         <ImageView
             android:layout_width="30dp"
@@ -33,17 +33,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
     </androidx.viewpager.widget.ViewPager>
-<!--    <TextView-->
-<!--        android:layout_above="@+id/bottom_nav_dailymenu"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:fontFamily="@font/font5"-->
-<!--        android:text="Design by @sang.nguyen"-->
-<!--        android:textStyle="bold"-->
-<!--        android:id="@+id/deignName"-->
-<!--        android:textColor="#171616"-->
-<!--        android:gravity="center"-->
-<!--        ></TextView>-->
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/food"
+        android:id="@+id/order"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/call"
+        android:tooltipText="Đặt món ngay"
+        ></ImageView>
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_above="@+id/bottom_nav_dailymenu"
+        android:layout_alignParentRight="true"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_baseline_call_24"
+        android:tooltipText="Gọi món ngay"
+        android:id="@+id/call"
+        ></ImageView>
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_nav_dailymenu"
         android:layout_alignParentBottom="true"

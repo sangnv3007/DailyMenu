@@ -4,19 +4,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
-    <SearchView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchfood"
-        android:queryHint="Tìm kiếm tại đây"
-        android:iconifiedByDefault="false">
-    </SearchView>
-    <LinearLayout
-        android:id="@+id/lnear_gr"
-        android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/searchfood">
         <GridView
             android:id="@+id/GrvCongthuc"
             android:layout_width="match_parent"
@@ -24,5 +11,4 @@
             android:numColumns="2"
             android:padding="10dp"
             ></GridView>
-    </LinearLayout>
 </RelativeLayout>
